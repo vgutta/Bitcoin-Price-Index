@@ -11,6 +11,12 @@ const BITCOIN_URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
 class App extends Component {
   constructor(props){
     super(props)
+
+    Chart.defaults.global.defaultFontColor = '#000';
+    Chart.defaults.global.defaultFontSize = 16;
+
+    this.state = {historicalData: null, currency: "PHP"}
+    this.onCurrencySelect = this.onCurrencySelect.bind(this)
   }
 
   componentDidMount () {
